@@ -1,3 +1,5 @@
+# vim: set fileencoding=utf-8
+
 from flask import Flask, render_template, session, redirect, request
 import furoshiki
 

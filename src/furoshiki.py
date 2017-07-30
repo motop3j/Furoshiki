@@ -1,3 +1,5 @@
+# vim: set fileencoding=utf-8
+
 import furoshikiconfig as CONFIG
 import random
 
