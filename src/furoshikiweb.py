@@ -30,12 +30,16 @@ def index():
 def account():
     return render_template("account.html", config=get_config())
 
+@app.route("/admin")
+def admin():
+    return render_template("admin.html", config=get_config())
+
 
 @app.before_request
 def login_check():
     if request.path.startswith("/static"):
         return
-    if request.endpoint == "account":
+    if request.endpoint in ("account", "admin"):
         return
     if not is_login():
         return redirect("/account")

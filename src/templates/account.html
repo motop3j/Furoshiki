@@ -28,19 +28,19 @@
       </form>
     </div>
     <div role="tabpanel" class="tab-pane" id="create">
-    <div role="tabpanel" class="tab-pane active" id="login">
-      <form>
-        <div class="form-group">
-          <label for="password">名前</label>
-          <input type="password" class="form-control" id="name" name="name" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <label for="email">メールアドレス</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-        </div>
-        <button type="submit" class="btn btn-default">ログイン</button>
-      </form>
-    </div>
+      <div role="tabpanel" class="tab-pane active" id="login">
+        <form>
+          <div class="form-group">
+            <label for="password">名前</label>
+            <input type="password" class="form-control" id="name" name="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <button type="submit" class="btn btn-default">ログイン</button>
+        </form>
+      </div>
 
     </div>
   </div>
@@ -48,11 +48,11 @@
 </div>
 
 <script>
-  $(".nav-tabs a").click(function(e) {
-        e.preventDefault();
-        $(this).tab("show")
-      }
-  )
+    $(".nav-tabs a").click(function (e) {
+            e.preventDefault();
+            $(this).tab("show")
+        }
+    )
 </script>
 
 
