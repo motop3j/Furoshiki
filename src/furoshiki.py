@@ -2,9 +2,34 @@
 
 import furoshikiconfig as CONFIG
 import random
+import logging
+import logging.config
+import yaml
+import os
 
-def init_config():
+logger = None
+
+def init():
     CONFIG.SYSTEM_NAME = "Furoshiki"
+    init_log()
+
+def init_log():
+    global logger
+    p = os.path
+    f = p.dirname(p.abspath(__file__))
+    f = p.join(f, "config/logging.yaml")
+    if not os.path.isfile(f):
+        return
+    logging.config.dictConfig(yaml.load(open(f).read()))
+    logger = logging.getLogger()
+    logger.debug("logger start.")
+    logger.debug(os.getcwd())
+
+
+
+def is_initialized():
+
+    return False
 
 def create_password():
     passwd = list()
@@ -20,4 +45,4 @@ def create_password():
     random.shuffle(passwd)
     return "".join(passwd)
 
-init_config()
+init()

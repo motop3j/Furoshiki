@@ -1,10 +1,14 @@
 # vim: set fileencoding=utf-8
 
-# 管理者ユーザ「admin」のパスワード
-ADMIN_PASSWORD = "furoshikiadmin"
+# 管理者ユーザのアカウント名
+ADMIN_ACCOUNT = "admin"
+
+# 管理者ユーザのパスワード
+ADMIN_DEFAULT_PASSWORD = "admin"
 
 # セッション
 SECRET_KEY = "This is the secret key."
 
-# Database
+# データベースパス
 # DATABASE_PATH = "furoshiki.sqlite"
+

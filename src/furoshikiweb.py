@@ -32,11 +32,14 @@ def account():
 
 @app.route("/admin")
 def admin():
+    if request.method == "get":
+        return render_template("admin.html", config=get_config())
     return render_template("admin.html", config=get_config())
 
 
 @app.before_request
 def login_check():
+    furoshiki.logger.debug("path: " + request.path)
     if request.path.startswith("/static"):
         return
     if request.endpoint in ("account", "admin"):
