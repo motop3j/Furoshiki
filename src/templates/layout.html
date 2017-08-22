@@ -49,12 +49,21 @@
         {% else %}
         <li role="presentation" class="text-muted"><a href="#">Home</a></li>
         {% endif %}
-        <li role="presentation" {% if config.TEMPLATE[
-        "header_nav_account_is_active"] %} class="active"{% endif %}><a href="account.html">Account</a></li>
+        {% if config.TEMPLATE['header_nav_account_is_active'] %}
+        <li role="presentation" class="active"><a href="account.html">Account</a></li>
+        {% else %}
+        <li role="presentation" class="text-muted"><a href="account.html">Account</a></li>
+        {% endif %}
       </ul>
     </nav>
     <h1 class="text-muted">{{ config.SYSTEM_NAME }}</h1>
   </div>
+
+  {% if data['error'] %}
+  <div>
+
+  </div>
+  {% endif %}
 
   <div class="marketing">
     {% block body %}{% endblock %}
